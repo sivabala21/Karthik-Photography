@@ -2,6 +2,53 @@
 {% load static %}
 
 {% block main %}
+<hr class="border-t-2 border-white mb-8">
 
-    <p>hi</p>
+<div class="container mx-auto p-6 bg-black">
+
+    <div class="mb-8 shadow-md p-4 rounded-lg flex">
+       <!-- Insert Contact and address on Left side of page -->
+       <div class="w-1/2 p-4">
+           <h2 class="text-2xl font-bold mb-4">Contact Us</h2>
+           <p class="mb-2">Near Amma Park, Tindivanam Bypass,</p>
+           <p class="mb-2">Navarkulam, </p>
+           <p class="mb-2">Puducherry</p>
+           <br>
+           <p class="mb-2"><a href="mailto:info@example.com" class="text-blue-500 hover:underline">info@example.com</a></p>
+           <p><a href="tel:+918940150464" class="text-blue-500 hover:underline">+91 8940150464</a></p>
+       </div>
+       <!-- Insert Map location on right side of page -->
+       <div class="w-1/2 p-4">
+        <h2 class="text-2xl font-bold mb-4">Map</h2>
+
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.0183432144063!2d79.79639623728593!3d11.974531511215003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5361ffab9bb225%3A0xf4300a5ae06cee58!2sPamban%20Svamigal%20Koyil!5e0!3m2!1sen!2sin!4v1709706097908!5m2!1sen!2sin" class="w-full h-64 rounded-lg" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+       </div>
+    </div>
+    <hr class="border-t-2 border-white mb-8">
+
+    <div class="mb-8 shadow-md p-4 rounded-lg text-center founder-animation">
+        <!-- Add details about founder with image-->
+        <h2 class="text-2xl font-bold mb-4">About Our Founder</h2>
+        <img src="{% static 'src/founder.jpg' %}" alt="Founder's Photo" class="mx-auto w-32 h-32 object-cover rounded-full shadow-lg">
+        <p class="mt-4">Karthik is the founder of our company. He has a passion for innovation and has led our team to success. With over 15 years of experience in the tech industry, Karthik's vision has been instrumental in shaping our company's direction. His leadership and dedication have not only fostered a culture of innovation but also ensured our commitment to quality and customer satisfaction.</p>
+    </div>
+    <hr class="border-t-2 border-white mb-8">
+
+    <div class="mb-8 shadow-md p-4 rounded-lg">
+        <!-- Add pictures of Studio -->
+        <h2 class="text-2xl font-bold mb-4">Studio </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="hover:scale-110 transition-transform duration-200">
+                <img src="{% static 'src/studio1.jpg' %}" alt="Studio 1" class="w-full h-auto">
+            </div>
+            <div class="hover:scale-110 transition-transform duration-200">
+                <img src="{% static 'src/founder.jpg' %}" alt="Studio 2" class="w-full h-auto">
+            </div>
+            <div class="hover:scale-110 transition-transform duration-200">
+                <img src="{% static 'src/studio3.jpeg' %}" alt="Studio 3" class="w-full h-auto">
+            </div>
+        </div>
+    </div>
+<hr class="border-t-2 border-white mb-8">
 {% endblock main %}
+

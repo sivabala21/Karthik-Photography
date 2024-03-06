@@ -2,6 +2,41 @@
 {% load static %}
 
 {% block main %}
+<hr class="border-t-2 border-white mb-8">
 
-    <p>hi</p>
+<div class="container mx-auto p-6 bg-black">
+    <h2 class="text-2xl font-bold text-white mb-6 text-center">Schedule an Appointment</h2>
+    <div class="mb-8 shadow-md p-4 rounded-lg">
+        <form method="post" class="space-y-3">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="mb-4">
+                {{ form.name.errors }}
+                <label for="{{ form.name.id_for_label }}" class="block text-gray-300 font-semibold mb-2">{{ form.name.label }}</label>
+                {{ form.name }}
+            </div>
+            <div class="mb-4">
+                {{ form.email.errors }}
+                <label for="{{ form.email.ids_for_label }}" class="block text-gray-300 font-semibold mb-2">{{ form.email.label }}</label>
+                {{ form.email }}
+            </div>
+            <div class="mb-4">
+                {{ form.phoneno.errors }}
+                <label for="{{ form.phoneno.id_for_label }}" class="block text-gray-300 font-semibold mb-2">{{ form.phoneno.label }}</label>
+                {{ form.phoneno }}
+            </div>
+            <div class="mb-4">
+                {{ form.appointment_date.errors }}
+                <label for="{{ form.appointment_date.id_for_label }}" class="block text-gray-300 font-semibold mb-2">{{ form.appointment_date.label }}</label>
+                {{ form.appointment_date }}
+            </div>
+
+            <button type="submit" class="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-300">
+                Submit
+            </button>
+        </form>
+    </div>
+</div>
+<hr class="border-t-2 border-white mb-8">
+
 {% endblock main %}
