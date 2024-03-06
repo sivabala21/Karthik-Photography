@@ -16,7 +16,10 @@
     <div class="flex flex-col justify-between min-h-screen">
         <div class="bg-black">
             <nav class="flex justify-between items-center mb-6 px-4">
-                <img src="{% static 'src/logo.jpg' %}" alt="Logo" class="h-20 md:h-24">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'src/logo.jpg' %}" alt="Logo" class="h-20 md:h-24">
+                </a>
+
                 <button id="menu-toggle" class="text-white focus:outline-none md:hidden">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -44,8 +47,9 @@
             <p class="text-white text-sm md:text-base">All Images on this website are shot and retouched by Karthik Photography Studio. None of the images can be downloaded or used without written permission.</p>
             <div class="mt-4 flex justify-center">
                 <a href="#" class="text-white hover:text-gray-300 mx-2"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-white hover:text-gray-300 mx-2"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-white hover:text-gray-300 mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/karthik_photographypy/" class="text-white hover:text-gray-300 mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@karthikphotography63/videos" class="text-white hover:text-gray-300 mx-2"><i class="fab fa-youtube"></i></a>
+
             </div>
         </footer>
     </div>
