@@ -1,0 +1,73 @@
+{% load static %}
+{% load tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% tailwind_css %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'layout/style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karthik Photography</title>
+
+</head>
+<body class="bg-black text-white">
+    <div class="flex flex-col justify-between min-h-screen">
+        <div class="bg-black">
+            <nav class="flex justify-between items-center mb-6 px-4">
+                <img src="{% static 'src/logo.jpg' %}" alt="Logo" class="h-20 md:h-24">
+                <button id="menu-toggle" class="text-white focus:outline-none md:hidden">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="hidden md:flex md:flex-row justify-center space-x-7 font-serif text-lg md:text-base lg:text-lg">
+                    <li class="mb-4 md:mb-0"><a href="{% url 'home' %}" class="hover:text-gray-300 py-4 block text-center">Home</a></li>
+                    <li class="dropdown relative mb-4 md:mb-0">
+                        <a href="#" class="hover:text-gray-300 py-4 block text-center flex items-center" onclick="toggleDropdown(this)">
+                            Products
+                            <i class="fas fa-chevron-down ml-1"></i>
+                        </a>
+                        <ul class="dropdown-menu bg-black rounded-md shadow-lg">
+                            <li><a href="{% url 'bride' %}" class="hover:text-yellow-900 py-2 block px-4">Wedding Photography</a></li>
+                            <li><a href="{% url 'portraits' %}" class="hover:text-yellow-900 py-2 block px-4">Portraits</a></li>
+                        </ul>
+                    </li>
+                    <li class="mb-4 md:mb-0"><a href="{% url 'book' %}" class="hover:text-gray-300 py-4 block text-center">Book an appointment</a></li>
+                    <li class="mb-4 md:mb-0"><a href="{% url 'about' %}" class="hover:text-gray-300 py-4 block text-center">About us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="bg-white">
+            {% block main %}{% endblock main %}
+        </div>
+        <footer class="bg-black py-6 text-center">
+            <p class="text-white text-sm md:text-base">All Images on this website are shot and retouched by Karthik Photography Studio. None of the images can be downloaded or used without written permission.</p>
+            <div class="mt-4 flex justify-center">
+                <a href="#" class="text-white hover:text-gray-300 mx-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white hover:text-gray-300 mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white hover:text-gray-300 mx-2"><i class="fab fa-instagram"></i></a>
+            </div>
+        </footer>
+    </div>
+    <nav id="menu" class="menu">
+        <ul>
+            <li><a href="#" class="text-white hover:text-gray-300 py-4 block">Home</a></li>
+            <li class="dropdown relative">
+                <div class="flex items-center justify-between">
+                    <a href="#" class="text-white hover:text-gray-300 py-4 block" onclick="toggleDropdown(this)">
+                        Products
+                        <i class="fas fa-chevron-down ml-2"></i>
+                    </a>
+                </div>
+                <ul class="dropdown-menu bg-black rounded-md shadow-lg">
+                    <li><a href="#" class="hover:text-yellow-900 py-2 block px-4">Wedding Photography</a></li>
+                    <li><a href="#" class="hover:text-yellow-900 py-2 block px-4">Portraits</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="text-white hover:text-gray-300 py-4 block">Book an appointment</a></li>
+            <li><a href="#" class="text-white hover:text-gray-300 py-4 block">About us</a></li>
+        </ul>
+    </nav>
+    <script src="{% static 'js/functionality' %}"></script>
+</body>
+</html>

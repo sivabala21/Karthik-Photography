@@ -4,21 +4,25 @@ from django.shortcuts import render
 
 def home(request):
 
-    pass
+    return render(request,"home.html")
 
 
-def products(request):
+def portraits(request):
     
-    pass
+    return render(request,"products/portraits.html")
 
 
 
 def book(request):
     
-    pass
+    return render(request,"book.html")
 
 
 def about(request):
     
-    pass
+    return render(request,"about.html")
+
+
+def bride(request):
+    return render(request,"products/wedding.html")
 
