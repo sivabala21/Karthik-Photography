@@ -29,23 +29,20 @@ def portraits(request):
 
 def book(request):
     if request.method == "POST":
-        form=AppointmentForm(request)
-        # if form.is_valid():
-        #     userRecorded = user.objects.all()
-        #     userRecorded.name=form.cleaned_data['name']
-        #     userRecorded.email=form.cleaned_data['email']
-        #     userRecorded.phoneno=form.cleaned_data['phoneno']
-        #     userRecorded.appointment_date=form.cleaned_data['appointment_date']
-        #     userRecorded.save
+        form=AppointmentForm(request.POST)
+        if form.is_valid():
+            sumbission=user.objects.create(name=form.cleaned_data['name'],
+                                           email=form.cleaned_data['email'],
+                                           phoneno=form.cleaned_data['phoneno'],
+                                           appointment_date=form.cleaned_data['appointment_date'])
 
-
-
-
-        return HttpResponse(reverse('book'))
+            print(sumbission)
+            sumbission.save()
+            return render(request,"book.html",{'form': form,'sumbited':True})
         
-    
-    form=AppointmentForm()
-    return render(request,"book.html",{'form': form})
+    else:
+        form=AppointmentForm()
+        return render(request,"book.html",{'form': form})
 
 
 def about(request):

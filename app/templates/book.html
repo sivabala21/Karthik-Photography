@@ -3,7 +3,18 @@
 
 {% block main %}
 <hr class="border-t-2 border-white mb-8">
-
+{% if sumbited %}
+<div class="flex items-center p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+    <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+    </svg>
+    <div>
+      <span class="font-medium">"Success! Your appointment has been scheduled."
+      </span>
+    </div>
+  </div>
+  
+{% endif %}
 <div class="container mx-auto p-6 bg-black">
     <h2 class="text-2xl font-bold text-white mb-6 text-center">Schedule an Appointment</h2>
     <div class="mb-8 shadow-md p-4 rounded-lg">
@@ -13,22 +24,22 @@
             <div class="mb-4">
                 {{ form.name.errors }}
                 <label for="{{ form.name.id_for_label }}" class="block text-gray-300 font-semibold mb-2">{{ form.name.label }}</label>
-                {{ form.name }}
+                <div class="text-slate-950">{{ form.name }}</div>
             </div>
             <div class="mb-4">
                 {{ form.email.errors }}
                 <label for="{{ form.email.ids_for_label }}" class="block text-gray-300 font-semibold mb-2">{{ form.email.label }}</label>
-                {{ form.email }}
+                <div class="text-slate-950">{{ form.email }}</div>
             </div>
             <div class="mb-4">
                 {{ form.phoneno.errors }}
                 <label for="{{ form.phoneno.id_for_label }}" class="block text-gray-300 font-semibold mb-2">{{ form.phoneno.label }}</label>
-                {{ form.phoneno }}
+                <div class="text-slate-950">{{ form.phoneno }}</div>
             </div>
             <div class="mb-4">
                 {{ form.appointment_date.errors }}
                 <label for="{{ form.appointment_date.id_for_label }}" class="block text-gray-300 font-semibold mb-2">{{ form.appointment_date.label }}</label>
-                {{ form.appointment_date }}
+                <div class="text-slate-950">{{ form.appointment_date }}</div>
             </div>
 
             <button type="submit" class="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-300">
