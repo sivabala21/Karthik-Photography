@@ -11,6 +11,8 @@ class user(models.Model):
     appointment_date = models.DateField(auto_now=False, auto_now_add=False)
     created_at=models.DateTimeField(default=timezone.now)
 
-class photos(models.Model):
-    bridePhoto=models.ImageField(upload_to='images/bride'),
+class bridePhoto(models.Model):
+    bridePhoto=models.ImageField(upload_to='images/bride')
+
+class protraitPhoto(models.Model):
     protraitPhoto=models.ImageField(upload_to='images/protrait')

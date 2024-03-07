@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django import forms
 from django.http import HttpResponse
 from django.urls import reverse
-from .models import photos,user
+from .models import protraitPhoto,user,bridePhoto
 
 # Create your views here.
 
@@ -20,10 +20,6 @@ def home(request):
 
     return render(request,"home.html")
 
-
-def portraits(request):
-    
-    return render(request,"products/portraits.html")
 
 
 
@@ -51,5 +47,14 @@ def about(request):
 
 
 def bride(request):
-    return render(request,"products/wedding.html")
+    photo = bridePhoto.objects.all()
 
+    # Pass photos to the template
+    return render(request, 'products/bride.html', {'all_photos': photo})
+
+
+def portraits(request):
+    photo = protraitPhoto.objects.all()
+
+    # Pass photos to the template
+    return render(request, 'products/portraits.html', {'all_photos': photo})

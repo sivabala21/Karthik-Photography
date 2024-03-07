@@ -1,7 +1,15 @@
 {% extends "layout.html" %}
 {% load static %}
-
 {% block main %}
 
-    <p>hi</p>
+<!-- Display protraitPhoto photos -->
+<h2 class="text-2xl font-bold my-4 text-black">Our latest work on portraits</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    {% for photo in all_photos %}
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="{{ photo.protraitPhoto.url }}" alt="protraitPhoto Photo" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
+    </div>
+    {% endfor %}
+</div>
+
 {% endblock main %}
