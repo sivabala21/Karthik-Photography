@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django import forms
+from django.http import HttpResponse
+from django.urls import reverse
+from .models import photos,user
 
 # Create your views here.
 
@@ -25,6 +28,21 @@ def portraits(request):
 
 
 def book(request):
+    if request.method == "POST":
+        form=AppointmentForm(request)
+        # if form.is_valid():
+        #     userRecorded = user.objects.all()
+        #     userRecorded.name=form.cleaned_data['name']
+        #     userRecorded.email=form.cleaned_data['email']
+        #     userRecorded.phoneno=form.cleaned_data['phoneno']
+        #     userRecorded.appointment_date=form.cleaned_data['appointment_date']
+        #     userRecorded.save
+
+
+
+
+        return HttpResponse(reverse('book'))
+        
     
     form=AppointmentForm()
     return render(request,"book.html",{'form': form})
