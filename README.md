@@ -18,6 +18,30 @@ To install and run the website locally, follow these steps:
 6. Run the development server: `python manage.py runserver`
 7. Open your browser and visit `http://localhost:8000`
 
+## Features
+
+- Responsive and accessible design
+- Gallery of images
+- Contact form
+- CRM admin panel for managing product images and viewing customer bookings
+- Homepage with a showcasing services
+
+### CRM Admin Panel
+
+The admin panel allows you to add, edit, and delete product images. To access the product management:
+
+1. Log in to the Django admin panel.
+2. Navigate to the "Products" section.
+3. You can add a new product, edit existing ones, or delete products as needed.
+
+### Viewing Customer Bookings
+
+Customer bookings can be viewed in the admin panel. To access booking information:
+
+1. Log in to the Django admin panel.
+2. Navigate to the "Bookings" section.
+3. View all customer booking details, including name, email, date, time, and any additional messages.
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
@@ -41,7 +65,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Contributing
 
 Please refer to the [contributing guide](CONTRIBUTING.md) for more information.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
